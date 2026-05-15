@@ -29,9 +29,14 @@ python3Packages.buildPythonApplication (finalAttrs: {
     requests
     dendropy
     pysam
+    packaging
   ];
 
-  nativeBuildInputs = with pkgs; [ phylophlan ];
+  # nativeBuildInputs = with pkgs; [ phylophlan ];
+  propagatedBuildInputs = with pkgs; [
+    bowtie2
+    phylophlan
+  ];
 
   # buildInputs = with pkgs; [
   #   ffmpeg
